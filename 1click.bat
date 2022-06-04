@@ -1,0 +1,1 @@
+sqlite3 CP19.cdb ".read Anime.sql"
