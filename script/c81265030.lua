@@ -51,7 +51,7 @@ function cm.initial_effect(c)
 end
 
 --소재
-function cm.xyzfilter0(c,tp,xyzc)
+function cm.xyzfil0(c,tp,xyzc)
 	return c:IsFaceup() and c:IsSetCard(0xc91) and c:IsType(TYPE_ORDER,xyzc,SUMMON_TYPE_XYZ,tp)
 end
 function cm.xyzop(e,tp,chk)
