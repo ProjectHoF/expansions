@@ -1937,14 +1937,10 @@ function Card.RegisterEffect(c,e,forced,...)
 		e:SetProperty(prop|EFFECT_FLAG_CANNOT_DISABLE)
 	end
 end
-
-local cregeff=Card.RegisterEffect
-function Card.RegisterEffect(c,e,forced,...)
-	cregeff(c,e,forced,...)
-end
-local dregeff=Duel.RegisterEffect
-function Duel.RegisterEffect(e,p,...)
-	dregeff(e,p,...)
+if not Duel.Exile then
+	function Duel.Exile(g,r)
+		return Duel.SendtoDeck(g,nil,2,r)
+	end
 end
 
 --dofile("expansions/script/proc_bakuado.lua")
